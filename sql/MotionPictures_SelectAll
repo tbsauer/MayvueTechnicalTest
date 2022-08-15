@@ -1,0 +1,25 @@
+Create proc [dbo].[MotionPictures_SelectAll] 
+
+
+as 
+
+/*
+
+----- TEST CODE -----
+
+	EXECUTE dbo.MotionPictures_SelectAll
+					
+
+*/
+
+BEGIN 
+
+
+	SELECT [Id]
+		  ,[Name]
+		  ,[Description]
+		  ,[ReleaseYear]
+
+	  FROM [dbo].[MotionPictures]
+
+END 
