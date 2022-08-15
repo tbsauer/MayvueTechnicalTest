@@ -1,0 +1,51 @@
+Create proc [dbo].[MotionPictures_Update] 
+
+				@Name nvarchar(50)
+			   ,@Description nvarchar(500)
+			   ,@ReleaseYear int
+			   ,@DateModified datetime2(7)
+			   ,@CreatedBy int
+			   ,@Id int OUTPUT
+
+as 
+
+/*
+
+----- TEST CODE -----
+
+	Declare @Id int = 3;
+
+	Declare @Name nvarchar(50) = 'Drive My Car'
+		   ,@Description nvarchar(500) = 'A Man drives his car'
+		   ,@ReleaseYear int = 2021
+		   ,@DateModified datetime2(7) = GETUTCDATE()
+		   ,@CreatedBy int = 1
+
+
+	EXECUTE dbo.MotionPictures_Update 
+										 @Name
+										,@Description
+										,@ReleaseYear
+										,@DateModified
+										,@CreatedBy
+										,@Id 
+	SELECT *
+			From dbo.MotionPictures
+			Where Id = @Id 
+					
+
+*/
+
+BEGIN 
+
+
+	UPDATE [dbo].[MotionPictures]
+	   SET [Name] = @Name
+          ,[Description] = @Description
+		  ,[ReleaseYear] = @ReleaseYear
+		  ,[DateModified] = GETUTCDATE()
+		  ,[CreatedBy] = @CreatedBy 
+		 
+		 WHERE Id = @Id 
+
+END 
