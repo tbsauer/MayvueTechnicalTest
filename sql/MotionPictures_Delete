@@ -1,0 +1,15 @@
+Create PROC [dbo].[MotionPictures_Delete]
+		@Id int 
+
+As 
+-- TEST CODE --
+	/*
+	Declare @Id int = 3;
+
+	Execute dbo.MotionPictures_Delete @Id
+	*/
+---------------------------
+BEGIN
+       DELETE FROM [dbo].[MotionPictures]
+       WHERE Id = @Id
+END
