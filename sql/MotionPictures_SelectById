@@ -1,0 +1,32 @@
+Create proc [dbo].[MotionPictures_SelectById] 
+
+			@Id int 
+
+
+as 
+
+/*
+
+----- TEST CODE -----
+
+	Declare @Id int = 3;
+
+	Execute dbo.MotionPictures_SelectById @Id
+
+
+					
+
+*/
+
+BEGIN 
+
+
+	SELECT [Id]
+		  ,[Name]
+		  ,[Description]
+		  ,[ReleaseYear]
+		  
+
+	  FROM [dbo].[MotionPictures]
+	  WHERE @Id = Id 
+END 
