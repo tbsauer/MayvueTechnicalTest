@@ -1,0 +1,59 @@
+ALTER proc [dbo].[MotionPictures_Insert] 
+
+				@Name nvarchar(50)
+			   ,@Description nvarchar(500)
+			   ,@ReleaseYear int
+			   ,@DateCreated datetime2(7)
+			   ,@CreatedBy int
+			   ,@Id int OUTPUT
+
+as 
+
+/*
+
+----- TEST CODE -----
+
+	Declare @Id int = 0
+
+	Declare 
+			@Name nvarchar(50) = 'Drive My Car'
+		   ,@Description nvarchar(50) = ''
+		   ,@ReleaseYear int = 2021
+		   ,@DateCreated datetime2(7) = (GETUTCDATE())
+		   ,@CreatedBy int = 1
+
+	EXECUTE dbo.MotionPictures_Insert @Name
+										,@Description
+										,@ReleaseYear
+										,@DateCreated
+										,@CreatedBy
+										,@Id OUTPUT
+	SELECT *
+			From dbo.MotionPictures
+			Where Id = @Id 
+					
+
+*/
+
+BEGIN 
+
+
+
+	INSERT INTO [dbo].[MotionPictures]
+				([Name]
+				,[Description]
+				,[ReleaseYear]
+				,[DateCreated]
+				,[CreatedBy])
+
+
+		VALUES 
+		       (@Name
+			   ,@Description
+			   ,@ReleaseYear
+			   ,GETUTCDATE()
+			   ,@CreatedBy)
+
+		SET @Id = SCOPE_IDENTITY()
+
+END 
