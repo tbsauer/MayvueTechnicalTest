@@ -1,0 +1,9 @@
+CREATE TABLE MotionPictures (
+    ID int NOT NULL PRIMARY KEY,
+    Name nvarchar(50) NOT NULL,
+    Description nvarchar(500),
+    ReleaseYear int NOT NULL,
+    DateCreated datetime2(7),
+    DateModified datetime2(7),
+    CreatedBy int NOT NULL, 
+);
